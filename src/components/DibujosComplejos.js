@@ -1,0 +1,32 @@
+import { Component } from "react";
+
+class DibujosComplejos extends Component{
+
+    //VAMOS A DIBUJAR UNA SERIE DE NUEMERO EN FORMATO HTML
+    //UTILIZANDO UN ARRAY CON <li></li>
+    dibujarNumeros = () => {
+        //DECLARAMOS UN ARRAY PARA ALMACENAR EL DIBUJO
+        var lista = [];
+        //VAMOS A REALIZAR UN BUCLE PARA RELLENAR NUMEROS DINAMICOS
+        for (var i = 1; i <=7; i++) {
+            var numero = parseInt(Math.random() * 100) + 1;
+            //MEDIANTE EL METODO push DEL ARRAY IREMOS
+            //RELLENANDO EL CODIGO HTML
+            lista.push(<li key={i}>{numero}</li>);
+        }
+        return lista;
+    }
+
+    render() {
+        return(
+            <div>
+                <h1>Dibujos Complejos HTML</h1>
+                <ul>
+                    {this.dibujarNumeros()}
+                </ul>
+            </div>
+        )
+    }
+}
+
+export default DibujosComplejos;
