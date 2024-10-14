@@ -17,10 +17,10 @@ class PadreNumeros extends Component {
   };
 
   sumarNumeros = (numero) => {
-    this.state({
-        sumaTotal : this.state.sumaTotal + numero
-    })
-  }
+    this.setState({
+      sumaTotal: this.state.sumaTotal + numero,
+    });
+  };
 
   render() {
     return (
@@ -29,12 +29,15 @@ class PadreNumeros extends Component {
         <button onClick={this.generarNumero}>Nuevo número</button>
         <h2>Total suma = {this.state.sumaTotal}</h2>
 
-        {
-            this.state.numeros.map((numero, index) => {
-            return <HijoNumero key={index} numero={numero} 
-            sumarNumeros={this.sumarNumeros} />;
-            })
-        }
+        {this.state.numeros.map((numero, index) => {
+          return (
+            <HijoNumero
+              key={index}
+              numero={numero}
+              sumarNumeros={this.sumarNumeros}
+            />
+          );
+        })}
       </div>
     );
   }
