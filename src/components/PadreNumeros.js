@@ -27,7 +27,11 @@ class PadreNumeros extends Component {
       <div>
         <h1>Padre Números</h1>
         <button onClick={this.generarNumero}>Nuevo número</button>
-        <h2>Total suma = {this.state.sumaTotal}</h2>
+        {this.state.sumaTotal === 0 ? (
+          ""
+        ) : (
+          <h2>Total suma = {this.state.sumaTotal}</h2>
+        )}
 
         {this.state.numeros.map((numero, index) => {
           return (
